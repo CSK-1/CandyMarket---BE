@@ -1,5 +1,6 @@
-const express = require('express');
-const authenticateToken = require('../middlewares/authMiddleware');
+
+import express from 'express';
+import authenticateToken from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
@@ -7,4 +8,4 @@ router.get('/profile', authenticateToken, (req, res) => {
   res.json({ message: 'Protected route', user: req.user });
 });
 
-module.exports = router;
+export default router; 
