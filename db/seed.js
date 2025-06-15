@@ -11,9 +11,7 @@ async function seed() {
 
     const user1 = await createUser({ username: "testuser", password: "password"});
 
-    await Promise.all([
-      createOrder({ date: "2025-01-01", note: "2 Banana Laffy Taffy, 1 Chocolate Bar", user_id: user1.id })
-    ]);
+    const order1 = await createOrder({ date: "2025-01-01", note: "2 Banana Laffy Taffy, 1 Chocolate Bar", user_id: user1.id });
 
     const product1 = await createProduct({ title: "Banana Laffy Taffy", description: "It doesn't really taste like banana.", price: 2});
     const product2 = await createProduct({ title: "Strawberry Laffy Taffy", description: "Enjoy getting this out of your molars.", price: 2});

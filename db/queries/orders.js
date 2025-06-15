@@ -12,3 +12,17 @@ export async function createOrder({ date, note, user_id }) {
     ]);
     return order[0];
 }
+
+export async function getOrders() {
+	const sql = `
+        SELECT * FROM orders;`;
+	const { rows: order } = await db.query(sql);
+	return order;
+}
+
+export async function getOrders(id) {
+	const sql = `
+        SELECT * FROM orders WHERE id = $1;`;
+	const { rows: order } = await db.query(sql, [id]);
+	return order[0];
+}
