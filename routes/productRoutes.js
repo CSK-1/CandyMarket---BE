@@ -1,6 +1,5 @@
 import express from "express";
-
-import { getProducts, getProduct } from "../queries/products.js";
+import { getProducts, getProduct } from "../db/queries/products.js";
 
 const router = express.Router();
 router.use(express.json());
@@ -30,3 +29,5 @@ router.get("/products/:id", async (req, res, next) => {
 
 	res.send(product);
 });
+
+export default router;
