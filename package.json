@@ -5,9 +5,11 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "express-validator": "^7.2.1",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
-    "pg": "^8.16.0"
+    "pg": "^8.16.0",
+    "router": "^2.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
@@ -18,20 +20,4 @@
     "db:schema": "psql -d market -f db/schema.sql",
     "db:seed": "node --env-file=.env db/seed.js",
     "db:reset": "npm run db:schema && npm run db:seed"
-  },
-  "name": "candymarket---be",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CSK-1/CandyMarket---BE.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CSK-1/CandyMarket---BE/issues"
-  },
-  "homepage": "https://github.com/CSK-1/CandyMarket---BE#readme"
 }
