@@ -16,6 +16,6 @@ export async function createReview({ rating, comment, product_id }) {
 export async function getReviewsByProduct(product_id) {
 	const sql = `
         SELECT * FROM reviews WHERE product_id = $1;`;
-	const { rows: review } = await db.query(sql);
+	const { rows: review } = await db.query(sql, [product_id]);
 	return review[0];
 }
