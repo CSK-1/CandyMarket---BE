@@ -28,7 +28,8 @@ router.get("/orders:id", verifyToken, async (req, res, next) => {
         return res.status(404).send({error: "order doesnt exist"})
     }
 
-    res.send(orderid)
-
-    //test
+      if( req.user.id !== id ){
+        return res.status(403).send({error: "not users order"})
+    }
+    res.send(orderid)  
 });
