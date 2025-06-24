@@ -20,7 +20,7 @@ router.get("/orders", verifyToken, async (req, res, next) => {
     res.send(getOrder)
 });
 
-router.get("/orders:id", verifyToken, async (req, res, next) => {
+router.get("/orders/:id", verifyToken, async (req, res, next) => {
     const id = Number(req.params.id)
     const orderid = await getOrders(id);
 
