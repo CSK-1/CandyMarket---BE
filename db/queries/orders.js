@@ -21,7 +21,7 @@ export async function getOrders() {
 }
 
 
-export async function getOrdersId(id) 
+export async function getOrdersId(id) {
 	const sql = `
         SELECT * FROM orders WHERE id = $1;`;
 	const { rows: order } = await db.query(sql, [id]);
