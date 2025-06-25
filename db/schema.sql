@@ -26,3 +26,6 @@ CREATE TABLE reviews (
   comment TEXT,
   product_id INTEGER NOT NULL REFERENCES products(id) ON DELETE CASCADE
 );
+
+ALTER TABLE reviews ADD COLUMN user_id INTEGER REFERENCES users(id);
+ALTER TABLE reviews ADD COLUMN created_at TIMESTAMP DEFAULT NOW();

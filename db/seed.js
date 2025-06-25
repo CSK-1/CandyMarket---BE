@@ -23,13 +23,13 @@ async function seed() {
     const product8 = await createProduct({ title: "Bubble Yum", description: "Tastes really good, for 30 seconds.", price: 2});
     const product9 = await createProduct({ title: "Blowpop", description: "Tasty lollipop and a mediocre gum!", price: 2});
     const product10 = await createProduct({ title: "Ring Pop", description: "Pretend you have a fancy ring, then eat it!", price: 2});
-    
-
+  
     await Promise.all([
-      createReview({ rating: 3, comment: "It really doesn't taste like bananas, but the description says that so I shouldn't be surprised.", product_id: product1.id }),
-      createReview({ rating: 8, comment: "It is tasty, for the whole time it was stuck in my molars.", product_id: product2.id }),
-      createReview({ rating: 6, comment: "Decent. I bet its Herhsey's.", product_id: product3.id })
-    ]);
+      createReview({ rating: 3, comment: "It really doesn't taste like bananas, but the description says that so I shouldn't be surprised.", product_id: product1.id, user_id: user1.id }),
+      createReview({ rating: 8, comment: "It is tasty, for the whole time it was stuck in my molars.", product_id: product2.id, user_id: user1.id }),
+      createReview({ rating: 6, comment: "Decent. I bet it's Hershey's.", product_id: product3.id, user_id: user1.id })
+]);
+
 
     console.log("🌱 Database seeded.");
   } catch (err) {
