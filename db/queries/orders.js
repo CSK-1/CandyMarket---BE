@@ -20,9 +20,17 @@ export async function getOrders() {
 	return order;
 }
 
-export async function getOrderById(id) {
+
+export async function getOrdersId(id) 
 	const sql = `
         SELECT * FROM orders WHERE id = $1;`;
 	const { rows: order } = await db.query(sql, [id]);
+	return order[0];
+}
+
+export async function getOrdersUser(user_id) {
+	const sql = `
+        SELECT * FROM orders WHERE user_id = $1;`;
+	const { rows: order } = await db.query(sql, [user_id]);
 	return order[0];
 }

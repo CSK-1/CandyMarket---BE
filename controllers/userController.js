@@ -60,6 +60,7 @@ export async function loginUser(req, res) {
 // GET /users/me
 export async function getMe(req, res) {
   const { id } = req.user;
+  console.log(id)
 
   try {
     const result = await pool.query('SELECT id, username FROM users WHERE id = $1', [id]);
