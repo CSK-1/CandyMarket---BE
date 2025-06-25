@@ -6,6 +6,7 @@ import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import protectedRoutes from "./routes/protectedRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
+import ordersRouter from "./routes/orders.js";
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/orders", ordersRouter);
 app.use("/api/protected", protectedRoutes);
 app.use("/api", productRoutes);
 
