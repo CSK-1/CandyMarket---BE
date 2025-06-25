@@ -7,6 +7,7 @@ import userRoutes from "./routes/userRoutes.js";
 import protectedRoutes from "./routes/protectedRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import ordersRouter from "./routes/orders.js";
+import reviewRoutes from "./routes/reviewRoutes.js"
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/orders", ordersRouter);
 app.use("/api/protected", protectedRoutes);
 app.use("/api", productRoutes);
+app.use("/api", reviewRoutes); 
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
